@@ -1,0 +1,24 @@
+
+.facebook:hover {
+  cursor: pointer;
+  filter: brightness(0.1);
+  transition: filter 0.3s ease-in-out;
+}
+
+.x:hover {
+  cursor: pointer;
+  filter: brightness(0.1);
+  transition: filter 0.3s ease-in-out;
+}
+
+.instagram:hover {
+  cursor: pointer;
+  filter: brightness(0.1);
+  transition: filter 0.3s ease-in-out;
+}
+
+.tiktok:hover {
+  cursor: pointer;
+  filter: brightness(0.1);
+  transition: filter 0.3s ease-in-out;
+}

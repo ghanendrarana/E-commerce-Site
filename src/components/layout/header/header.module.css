@@ -1,0 +1,67 @@
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  width: 100%;
+  padding: 50px;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 20px;
+  filter: brightness(1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  width: 100%;
+  padding: 50px;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  z-index: 1;
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav > .navLinks {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: space-between;
+}
+
+.nav > .navLinks > span > a:hover {
+  text-decoration: underline;
+}
+
+.userAction {
+  display: flex;
+  flex-direction: row;
+  padding: 3px;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+

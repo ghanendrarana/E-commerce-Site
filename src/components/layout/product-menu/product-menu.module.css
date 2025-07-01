@@ -1,0 +1,42 @@
+.container {
+    position: absolute;  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    border-right: 1px solid rgb(217, 210, 210);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 10px;
+}
+
+.open {
+    margin-left: 0;
+    transition-property: margin-left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.closed {
+    margin-left: -300px;
+    transition-property: margin-left;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.closeButton {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+}
