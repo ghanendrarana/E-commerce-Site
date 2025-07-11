@@ -25,6 +25,11 @@ export default function Register() {
     console.log(
       `firsName: ${formData.firstName}, lastName: ${formData.lastName}, email: ${formData.email}, password: ${formData.password}, confirmPassword: ${formData.confirmPassword} `
     );
+    if (formData.password === formData.confirmPassword) {
+        alert("Password Match!");
+    } else {
+        alert ("Password do not match");
+    }
   }
 
   return (
