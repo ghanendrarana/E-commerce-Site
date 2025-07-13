@@ -1,4 +1,16 @@
-
-.search:hover {
+.searchField:hover {
   cursor: pointer;
+}
+.searchField {
+  position: relative;
+  display: flex;
+}
+
+.searchInput {
+  height: 35px;
+  border: 1px solid black;
+}
+
+.searchBtn {
+   border: 1px solid black;
 }
