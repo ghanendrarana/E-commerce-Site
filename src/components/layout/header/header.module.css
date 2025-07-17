@@ -59,7 +59,8 @@
 .userAction {
   display: flex;
   flex-direction: row;
-  padding: 3px;
   justify-content: flex-end;
+  align-items: center;
+  padding: 3px;
   gap: 40px;
 }

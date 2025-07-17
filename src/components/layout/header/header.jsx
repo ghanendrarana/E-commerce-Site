@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import styles from "./header.module.css";
 
 import ProductMenuButton from "../product-menu/product-menu-button";
-import Search from "../../userAction/search/search";
+import SearchField from "../../userAction/search/search";
 import Cart from "../../userAction/cart/cart";
 import Facebook from "../../../icons/facebook";
 import X from "../../../icons/x";
@@ -65,15 +65,12 @@ export default function Header() {
         </div>
 
         <div className={styles.userAction}>
-          <div>
-            <Search />
-          </div>
-          <div>
-            <Cart />
-          </div>
-          <span>
-            <Link to="/logIn"> <CircleUserRound/> </Link>
-          </span>
+          <SearchField />
+          <Cart />
+          <Link to="/logIn">
+            {" "}
+            <CircleUserRound />{" "}
+          </Link>
         </div>
       </nav>
     </header>

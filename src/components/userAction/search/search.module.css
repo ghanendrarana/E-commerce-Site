@@ -1,16 +1,32 @@
 .searchField:hover {
   cursor: pointer;
 }
-.searchField {
+
+.searchContainer {
+  width: 100%;
+  max-width: 300px;
+}
+
+.searchWrapper {
   position: relative;
   display: flex;
+  align-items: center;
 }
 
 .searchInput {
+  position: absolute;
   height: 35px;
+  width: 250px;
+  left: -250px;
+  padding: 10px 40px 10px 15px;
+  border-radius: 3px;
   border: 1px solid black;
+  font-size: 15px;
+  outline: none;
 }
 
 .searchBtn {
-   border: 1px solid black;
+  position: absolute;
+  border: none;
+  right: 10px;
 }

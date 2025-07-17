@@ -19,24 +19,26 @@ export default function SearchField() {
   }
 
   return (
-    <form onSubmit={handleSearch} className={styles.searchField}>
-      {showInput && (
-        <input
-          type="text"
-          name="searchQuery"
-          value={query}
-          placeholder="Search Products"
-          onChange={(e) => setQuery(e.target.value)}
-          className={styles.searchInput}
-        />
-      )}
-      <button
-        type={showInput ? "Submit" : "button"}
-        onClick={showInput ? null : toggleInput}
-        className={styles.searchBtn}
-      >
-        <Search />
-      </button>
+    <form onSubmit={handleSearch} className={styles.searchContainer}>
+      <div  className={styles.searchWrapper}>
+        {showInput && (
+          <input
+            type="text"
+            name="searchQuery"
+            value={query}
+            placeholder="Search Products"
+            onChange={(e) => setQuery(e.target.value)}
+            className={styles.searchInput}
+          />
+         )}
+        <button
+          type={showInput ? "Submit" : "button"}
+          onClick={showInput ? null : toggleInput}
+          className={styles.searchBtn}
+        >
+          <Search />
+        </button>
+      </div>
     </form>
   );
 }
