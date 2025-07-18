@@ -20,7 +20,7 @@ export default function SearchField() {
 
   return (
     <form onSubmit={handleSearch} className={styles.searchContainer}>
-      <div  className={styles.searchWrapper}>
+      <div className={styles.searchWrapper}>
         {showInput && (
           <input
             type="text"
@@ -30,11 +30,15 @@ export default function SearchField() {
             onChange={(e) => setQuery(e.target.value)}
             className={styles.searchInput}
           />
-         )}
+        )}
         <button
-          type={showInput ? "Submit" : "button"}
-          onClick={showInput ? null : toggleInput}
           className={styles.searchBtn}
+          type={query.trim() ? "submit" : "button"}
+          onClick={() => {
+            if (!showInput || !query.trim()) {
+              toggleInput();
+            }
+          }}
         >
           <Search />
         </button>
