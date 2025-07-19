@@ -14,6 +14,7 @@ import Tiktok from "../../../icons/tiktok";
 import { CircleUserRound } from "lucide-react";
 
 export default function Header() {
+
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerTop}>
