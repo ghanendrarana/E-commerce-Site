@@ -4,9 +4,8 @@
   align-items: center;
   width: 350px;
   height: 400px;
-  margin: 5px auto;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  gap: 30px;
+  margin: 0px auto;
+  gap: 20px;
 }
 
 .header {
