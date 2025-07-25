@@ -1,26 +1,27 @@
 import React from "react";
 import Header from "../../layout/header/header";
+
 import styles from "./home.module.css";
+
+import FurnitureProducts from "../../../data/products/products.jsx";
 
 import opulentBaroqueArmchair from "../../../assets/Furniture Picture/opulent-baroque-armchair.jpg";
 
 export default function Home() {
+  const product = FurnitureProducts[0];
   return (
     <div>
       <Header />
 
       <div className={styles.mainContainer}>
         <div className={styles.discriptionContainer}>
-          <div className={styles.itemName}>Opulent Baroque Armchair</div>
-          <text>
-            This is a luxurious vintage armchair with a high tufted backrest and
-            rolled armrests, upholstered in soft beige fabric. It features
-            ornate gold-toned wooden carvings and comes with two decorative
-            pillows, giving it an elegant and classic look.
-          </text>
-          <div>Shop Now</div>
+          <div className={styles.productName}> {product.name} </div>
+          <div className={styles.description}> {product.description} </div>
+          <button className={styles.button}>SHOP NOW</button>
         </div>
-        <img src={opulentBaroqueArmchair} alt="opulent-baroque-armchair" className={styles.image}/>
+        <div>
+          <img src={product.image} alt={product.name} className={styles.image} />
+        </div>
       </div>
     </div>
   );

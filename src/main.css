@@ -20,6 +20,4 @@ button {
 body {
   padding: 0 50px;
   position: relative;
-  min-height: 100vh;
-  overflow: hidden;
 } 

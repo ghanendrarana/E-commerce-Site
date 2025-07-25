@@ -1,31 +1,48 @@
-
 .mainContainer {
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    gap: 100px;  
-    padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 100px;
+  padding: 20px;
+    background-color: rgb(250, 245, 245);
 }
 
 .discriptionContainer {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    padding: 60px;
-    gap: 50px;
-    width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  gap: 50px;
+  width: 500px;
+  align-items: flex-start;
 }
 
-.itemName {
-    font-size: 30px;
-    font-weight:500;
-    font-family:'Times New Roman', Times, serif;
+.productName {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.description {
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+.button {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+button:hover {
+  text-decoration: underline;
 }
 
 .image {
-    height: 400px;
-    width: 400px;
-    padding: 20px;
-    margin-right: 100px;
+  height: 400px;
+  width: 400px;
+  padding: 20px;
+  margin-right: 100px;
 }
