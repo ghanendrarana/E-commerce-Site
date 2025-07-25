@@ -8,7 +8,7 @@ import FurnitureProducts from "../../../data/products/products.jsx";
 import opulentBaroqueArmchair from "../../../assets/Furniture Picture/opulent-baroque-armchair.jpg";
 
 export default function Home() {
-  const product = FurnitureProducts[0];
+  const product = FurnitureProducts[1];
   return (
     <div>
       <Header />
