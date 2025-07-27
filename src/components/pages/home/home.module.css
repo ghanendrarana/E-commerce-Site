@@ -36,7 +36,7 @@
   margin-top: 50px;
 }
 
-button:hover {
+.button:hover {
   text-decoration: underline;
 }
 

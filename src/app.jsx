@@ -7,6 +7,7 @@ import Contact from "./components/pages/contact/contact";
 import Faqs from "./components/pages/faqs/faqs";
 import LogIn from "./components/pages/login/login";
 import Register from "./components/pages/register/register";
+import ShopNow from "./components/userAction/shopNow/shopNow";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="faqs" element={<Faqs />} />
         <Route path="logIn" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/shopNow" element={<ShopNow />} />
       </Routes>
     </BrowserRouter>
   );

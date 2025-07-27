@@ -16,15 +16,14 @@ const FurnitureProducts = [
   },
   {
     id: 2,
-   name: "Armchair",
-   price: 199.99,
-   category: "Armchair",
-   description: `This is a luxurious vintage armchair with a high tufted backrest and
-           rolled armrests, upholstered in soft beige fabric.`,
-   rating: 4.5,
-   image: ArmChairFurniture,
-  } 
+    name: "Armchair",
+    price: 199.99,
+    category: "Armchair",
+    description: `This is a luxurious vintage armchair with a high tufted backrest and
+    rolled armrests, upholstered in soft beige fabric.`,
+    rating: 4.5,
+    image: ArmChairFurniture,
+  },
 ];
-
 
 export default FurnitureProducts;

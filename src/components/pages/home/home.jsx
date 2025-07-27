@@ -1,14 +1,18 @@
-import React from "react";
+import { React, useState } from "react";
+import { Link } from "react-router";
 import Header from "../../layout/header/header";
-
 import styles from "./home.module.css";
 
 import FurnitureProducts from "../../../data/products/products.jsx";
 
-import opulentBaroqueArmchair from "../../../assets/Furniture Picture/opulent-baroque-armchair.jpg";
-
 export default function Home() {
   const product = FurnitureProducts[1];
+
+
+  function handleClick() {
+    console.log(`Navigating to shop now for product: ${product.name}`);
+    
+  }
   return (
     <div>
       <Header />
@@ -17,10 +21,18 @@ export default function Home() {
         <div className={styles.discriptionContainer}>
           <div className={styles.productName}> {product.name} </div>
           <div className={styles.description}> {product.description} </div>
-          <button className={styles.button}>SHOP NOW</button>
+          <span>
+            <Link to="/shopNow" className={styles.button} onClick={handleClick}>
+              SHOP NOW
+            </Link>
+          </span>
         </div>
         <div>
-          <img src={product.image} alt={product.name} className={styles.image} />
+          <img
+            src={product.image}
+            alt={product.name}
+            className={styles.image}
+          />
         </div>
       </div>
     </div>
