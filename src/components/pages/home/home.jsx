@@ -2,17 +2,20 @@ import { React, useState } from "react";
 import { Link } from "react-router";
 import Header from "../../layout/header/header";
 import styles from "./home.module.css";
-
 import FurnitureProducts from "../../../data/products/products.jsx";
+import useProductStore from "../../../store/useProductStore.js";
 
 export default function Home() {
   const product = FurnitureProducts[1];
-
+  const setSelectedProduct = useProductStore(
+    (state) => state.setSelectedProduct
+  );
 
   function handleClick() {
+    setSelectedProduct(product);
     console.log(`Navigating to shop now for product: ${product.name}`);
-    
   }
+
   return (
     <div>
       <Header />
@@ -22,7 +25,7 @@ export default function Home() {
           <div className={styles.productName}> {product.name} </div>
           <div className={styles.description}> {product.description} </div>
           <span>
-            <Link to="/shopNow" className={styles.button} onClick={handleClick}>
+            <Link to="/shopNow" onClick={handleClick} className={styles.button}>
               SHOP NOW
             </Link>
           </span>
