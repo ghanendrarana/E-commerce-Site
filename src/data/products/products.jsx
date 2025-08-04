@@ -11,6 +11,8 @@ const FurnitureProducts = [
     rolled armrests, upholstered in soft beige fabric. It features
     ornate gold-toned wooden carvings and comes with two decorative
     pillows, giving it an elegant and classic look.`,
+    sizes: ["Small", "Medium", "Large"],
+    color: ["Gray", "Beige", "Brown"],
     rating: 4.5,
     image: opulentBaroqueArmchair,
   },
@@ -21,6 +23,8 @@ const FurnitureProducts = [
     category: "Armchair",
     description: `This is a luxurious vintage armchair with a high tufted backrest and
     rolled armrests, upholstered in soft beige fabric.`,
+    sizes: ["Small", "Medium", "Large"],
+    colors: ["Gray", "Beige", "Red"],  
     rating: 4.5,
     image: ArmChairFurniture,
   },
