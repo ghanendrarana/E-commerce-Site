@@ -8,9 +8,23 @@ export default function ShopNow() {
   const product = useProductStore((state) => state.selectedProduct);
   const [selectedSize, setSelectedSize] = React.useState("");
   const [selectedColor, setSelectedColor] = React.useState("");
+  const [quantity, setQuantity] = React.useState(1);
 
   console.log(product);
+
   if (!product) return <p>No Product Selected</p>;
+
+  function handleAddToCart() {
+    const cartItem ={
+      productId: product.id,
+      name: product.name,
+      price: product.price,
+      size: selectedSize,
+      color: selectedColor,
+      quantity: quantity,
+    }
+    console.log(cartItem);
+  }
 
   return (
     <div>
@@ -32,8 +46,8 @@ export default function ShopNow() {
               </label>
               <select
                 id="sizeSelect"
-                // value={selectedSize}
-                // onChange={(e) => setSelectedSize(e.target.value)}
+                value={selectedSize}
+                onChange={(e) => setSelectedSize(e.target.value)}
               >
                 <option value="">Choose Size</option>
                 {product.sizes.map((size) => (
@@ -49,8 +63,8 @@ export default function ShopNow() {
               </label>
               <select
                 id="colorSelect"
-                // value={selectedColor}
-                // onChange={(e) => setSelectedSize(e.target.value)}
+                value={selectedColor}
+                onChange={(e) => setSelectedColor(e.target.value)}
               >
                 <option value="">Choose Color</option>
                 {product.colors?.map((color) => (
@@ -61,8 +75,17 @@ export default function ShopNow() {
               </select>
             </div>
             <div className={styles.buttomContainer}>
-              <div className={styles.qunatity}>Quantity</div>
-              <button className={styles.button}>Add to Cart</button>
+              <label htmlFor="quantityInput" className={styles.qunatity}>
+                Quantity
+              </label>
+              <input
+                type="number"
+                id="quantityInput"
+                min="1"
+                value={quantity}
+                onChange={(e)=> setQuantity(e.target.value)}
+              />
+              <button onClick={handleAddToCart} className={styles.button}>Add to Cart</button>
             </div>
           </div>
         </div>

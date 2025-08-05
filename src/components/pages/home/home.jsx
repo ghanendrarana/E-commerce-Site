@@ -13,7 +13,6 @@ export default function Home() {
 
   function handleClick() {
     setSelectedProduct(product);
-    console.log(`Navigating to shop now for product: ${product.name}`);
   }
 
   return (
