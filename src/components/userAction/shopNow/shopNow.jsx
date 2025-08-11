@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../layout/header/header";
-import useProductStore from "../../../store/useProductStore";
+import useProductStore from "../../../store/useCartStore";
 
 import styles from "./shopNow.module.css";
 
@@ -15,6 +15,10 @@ export default function ShopNow() {
   if (!product) return <p>No Product Selected</p>;
 
   function handleAddToCart() {
+    if (!selectedSize || !selectedColor) {
+      alert("Please select size and color.")
+      return;
+    };
     const cartItem ={
       productId: product.id,
       name: product.name,

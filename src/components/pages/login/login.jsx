@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Header from "../../layout/header/header";
 import styles from "./login.module.css";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function LogIn() {
   const [email, setEmail] = useState("");

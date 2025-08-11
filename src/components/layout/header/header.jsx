@@ -10,11 +10,11 @@ import Facebook from "../../../icons/facebook";
 import X from "../../../icons/x";
 import Instagram from "../../../icons/instagram";
 import Tiktok from "../../../icons/tiktok";
+import {ShoppingCart} from 'lucide-react';
 
 import { CircleUserRound } from "lucide-react";
 
 export default function Header() {
-
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerTop}>
@@ -67,7 +67,11 @@ export default function Header() {
 
         <div className={styles.userAction}>
           <SearchField />
-          <Cart />
+          <Link to="/cart">
+            {/* <Cart /> */}
+              <ShoppingCart />
+          </Link>
+
           <Link to="/logIn">
             {" "}
             <CircleUserRound />{" "}

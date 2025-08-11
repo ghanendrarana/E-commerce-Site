@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./components/pages/home/home";
 import About from "./components/pages/about/about";
@@ -8,6 +8,7 @@ import Faqs from "./components/pages/faqs/faqs";
 import LogIn from "./components/pages/login/login";
 import Register from "./components/pages/register/register";
 import ShopNow from "./components/userAction/shopNow/shopNow";
+import Cart from "./components/userAction/cart/cart";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="faqs" element={<Faqs />} />
         <Route path="logIn" element={<LogIn />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/shopNow" element={<ShopNow />} />
+        <Route path="register" element={<Register />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="shopNow" element={<ShopNow />} />
       </Routes>
     </BrowserRouter>
   );
