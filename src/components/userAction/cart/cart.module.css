@@ -1,11 +1,18 @@
-/* .cart:hover {
-  cursor: pointer;
-} */
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+  margin-top: 30px;
+}
 .mainContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  border-bottom: 1px solid rgb(161, 158, 158);
 }
 
 .titleBar {
@@ -21,4 +28,45 @@
   width: 150px;
   padding: 20px;
   margin-right: 100px;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.removeButton {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+.removeButton:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.mainContainer > input {
+  padding: 5px;
+  width: 70px;
+}
+
+.amountContainer {
+  display: flex;
+  padding: 10px 10px;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
 }

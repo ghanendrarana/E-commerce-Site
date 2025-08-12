@@ -5,6 +5,8 @@ import styles from "./cart.module.css";
 
 export default function Cart() {
   const cart = useCartStore((state) => state.cart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const clearCart = useCartStore((state) => state.clearCart);
 
   const [quantities, setQuantities] = React.useState(1);
 
@@ -12,23 +14,44 @@ export default function Cart() {
     <div>
       <Header />
       {cart.length === 0 ? (
-        <p> No items in Cart </p>
+        <div className={styles.emptyCart}>
+          <h3>Your Cart</h3>
+          <p> Your cart is currently empty. </p>
+        </div>
       ) : (
         cart.map((item, index) => (
-          <div key={index} className={styles.mainContainer}>
-            <img src={item.image} alt="Armchair" className={styles.image} />
-            <div> {item.name}</div>
-            <div> $ {item.price}</div>
-            <input
-              type="number"
-              min="1"
-              value={quantities}
-              onChange={(e) => {
-                setQuantities(e.target.value);
-                console.log(e.target.value);
-              }}
-            />
-            <div> $ {item.price * quantities}</div>
+          <div>
+            <div key={index} className={styles.mainContainer}>
+              <img src={item.image} alt="Armchair" className={styles.image} />
+              <div className={styles.nameContainer}>
+                <div> {item.name}</div>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className={styles.removeButton}
+                >
+                  Remove
+                </button>
+              </div>
+              <div> $ {item.price}</div>
+              <input
+                type="number"
+                min="1"
+                value={quantities}
+                onChange={(e) => {
+                  setQuantities(e.target.value);
+                }}
+              />
+              <div> $ {parseFloat((item.price * quantities).toFixed(2))}</div>
+            </div>
+            <div className={styles.amountContainer}>
+              <h3>Total</h3>
+              <div>Total Amount</div>
+            </div>
+            <div className={styles.buttonContainer}>
+              <button onClick={clearCart}> Clear All</button>
+              <button>Update</button>
+              <button>Check Out</button>
+            </div>
           </div>
         ))
       )}

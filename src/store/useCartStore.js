@@ -27,8 +27,12 @@ const useCartStore = create(
             };
           }),
 
-        removeFromCart: () => {},
-        clearCart: () => {},
+        removeFromCart: (id) => 
+          set((state)=>({
+            cart: state.cart.filter((product)=> product.id !== id)
+          })),
+
+        clearCart: () => set({ cart: []}),
         updateCartItem: () => {},
       };
     },
