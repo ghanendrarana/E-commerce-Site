@@ -59,14 +59,31 @@
 .amountContainer {
   display: flex;
   padding: 10px 10px;
-  gap: 20px;
+  gap: 100px;
+  padding: 20px 60px;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 80px;
 }
 
 .buttonContainer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 30px;
+  gap: 10px;
+  padding: 10px 30px;
+}
+
+.buttonContainer > button {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 20px;
+  margin-right: 80px;
+}
+
+
+.buttonContainer > button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
 }
