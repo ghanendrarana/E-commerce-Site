@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 import styles from "./header.module.css";
 
@@ -10,8 +10,8 @@ import Facebook from "../../../icons/facebook";
 import X from "../../../icons/x";
 import Instagram from "../../../icons/instagram";
 import Tiktok from "../../../icons/tiktok";
-import {ShoppingCart} from 'lucide-react';
 
+import { ShoppingCart } from "lucide-react";
 import { CircleUserRound } from "lucide-react";
 
 export default function Header() {
@@ -68,8 +68,7 @@ export default function Header() {
         <div className={styles.userAction}>
           <SearchField />
           <Link to="/cart">
-            {/* <Cart /> */}
-              <ShoppingCart />
+            <ShoppingCart />
           </Link>
 
           <Link to="/logIn">

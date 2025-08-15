@@ -1,0 +1,70 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(161, 158, 158);
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 10px;
+}
+
+.body > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contactDetails > input {
+  height: 30px;
+  width: 500px;
+  padding: 10px;
+}
+
+.deliveryAddress {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deliveryAddress > select {
+  padding: 5px;
+  height: 30px;
+}
+
+.deliveryAddress > input {
+  padding: 10px;
+  height: 30px;
+}
+
+.labelContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}

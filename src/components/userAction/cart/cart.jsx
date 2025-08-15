@@ -1,12 +1,15 @@
 import React from "react";
 import Header from "../../layout/header/header";
 import useCartStore from "../../../store/useCartStore";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./cart.module.css";
 
 export default function Cart() {
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const clearCart = useCartStore((state) => state.clearCart);
+  const navigate = useNavigate();
 
   const [quantities, setQuantities] = React.useState(1);
 
@@ -24,6 +27,11 @@ export default function Cart() {
     return total + item.price * qty;
   }, 0);
 
+  //continue shopping, navigating to home page
+
+  function handleContinueShopping() {
+    navigate("/");
+  }
   return (
     <div>
       <Header />
@@ -67,8 +75,12 @@ export default function Cart() {
             </div>
             <div className={styles.buttonContainer}>
               <button onClick={clearCart}> Clear All</button>
-              <button>Update</button>
-              <button>Check Out</button>
+              <button onClick={handleContinueShopping}>
+                Continue Shopping
+              </button>
+              <span>
+                <Link to="/checkout">Check Out</Link>
+              </span>
             </div>
           </div>
         ))

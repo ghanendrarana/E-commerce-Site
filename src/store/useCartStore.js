@@ -2,10 +2,6 @@ import { create } from "zustand";
 import { LOCAL_STORAGE_KEYS } from "../constants/util";
 import { persist } from "zustand/middleware";
 
-// const cartItems = localStorage.getItem(LOCAL_STORAGE_KEYS.CART)
-//   ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.CART))
-//   : [];
-
 const useCartStore = create(
   persist(
     (set) => {
@@ -33,7 +29,6 @@ const useCartStore = create(
           })),
 
         clearCart: () => set({ cart: []}),
-        updateCartItem: () => {},
       };
     },
     {

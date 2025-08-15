@@ -9,6 +9,7 @@ import LogIn from "./components/pages/login/login";
 import Register from "./components/pages/register/register";
 import ShopNow from "./components/userAction/shopNow/shopNow";
 import Cart from "./components/userAction/cart/cart";
+import CheckOut from "./components/pages/checkout/checkout";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="cart" element={<Cart />} />
         <Route path="shopNow" element={<ShopNow />} />
+        <Route path="checkout" element={<CheckOut />} />
       </Routes>
     </BrowserRouter>
   );
