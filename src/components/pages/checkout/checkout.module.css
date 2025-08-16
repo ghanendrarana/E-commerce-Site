@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
 }
 
 .header {
@@ -30,7 +29,7 @@
   gap: 10px;
   padding: 10px;
   width: 100%;
-  border: 1px solid black;
+
 }
 
 .contactDetails {
@@ -50,6 +49,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 .deliveryAddress > select {
@@ -67,4 +67,62 @@
   flex-direction: row;
   align-items: center;
   gap: 5px;
+}
+
+.paymentDetails{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.paymentHeader {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 10px 0px;
+  gap: 10px;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid rgb(195, 199, 201);
+  background-color: rgb(214, 221, 225);
+  border-radius: 5px;
+}
+
+.cardDetails > label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.cardDetails >label >input {
+  height: 30px;
+  padding: 15px 10px 15px 10px;
+}
+
+.notice{
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(112, 101, 101);
+  padding: 5px 0px;
+}
+
+.cardDetails > div {
+  border: 1px solid rgb(132, 176, 202);
+  border-radius: 5px 5px 0px 0px;
+  padding: 15px 10px 15px 10px;
+}
+
+.payNow {
+  height: 40px;
+  border: 1px solid rgb(132, 176, 202);
+  border-radius: 5px;
+  margin-top: 20px;
+  background: rgb(69, 126, 233);
+  color: white;
+  font-size: 17px;
 }

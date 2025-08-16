@@ -58,10 +58,22 @@ export default function CheckOut() {
               <label>Save this information for next time</label>
             </div>
           </div>
-          <div>
-            <div>Shipping Method</div>
+          <div>Shipping Method</div>
+          <div className={styles.paymentDetails}>
+            <div className=" styles.paymentHeader">
+              <div>Payment</div>
+              <div className={styles.notice}>All transaction are secure and encrypted</div>
+            </div>
+            <div className={styles.cardDetails}>
+              <div>Credit Card</div>
+              <label>
+                <input type="text" placeholder="Card Number" />
+                <input type="month" placeholder="Expiration Date (MM/YY)" />
+                <input type="password" placeholder="CVV Code" />
+              </label>
+            </div>
+            <button className={styles.payNow}>Pay Now</button>
           </div>
-          <div>Payment Mode/Details</div>
         </div>
         <div>Total Items with Total amount</div>
       </div>
