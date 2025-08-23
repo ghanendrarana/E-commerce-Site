@@ -9,6 +9,7 @@ export default function Cart() {
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const clearCart = useCartStore((state) => state.clearCart);
+  const setCheckoutData = useCartStore((state)=>state.setCheckoutData);
   const navigate = useNavigate();
 
   const [quantities, setQuantities] = React.useState(1);
@@ -32,6 +33,25 @@ export default function Cart() {
   function handleContinueShopping() {
     navigate("/");
   }
+
+ const handleCheckout =() => {
+  const checkoutItems = cart.map((item)=>({
+    id: item.id,
+    name: item.name,
+    image: item.image,
+    price: item.price,
+    quantity: quantities[item.id] || 1,
+    total: item.price * (quantities[item.id] || 1),
+  }));
+
+  const totalAmount = checkoutItems.reduce((sum, i)=> sum + i.total, 0);
+
+  setCheckoutData({checkoutItems, totalAmount});
+
+  navigate("/checkout")
+ }
+
+
   return (
     <div>
       <Header />
@@ -79,7 +99,7 @@ export default function Cart() {
                 Continue Shopping
               </button>
               <span>
-                <Link to="/checkout">Check Out</Link>
+                <button to="/checkout" onClick={handleCheckout}>Check Out</button>
               </span>
             </div>
           </div>

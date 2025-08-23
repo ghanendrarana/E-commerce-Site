@@ -16,10 +16,7 @@
 
 .body {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+  gap: 100px;
   padding: 10px;
 }
 
@@ -29,7 +26,6 @@
   gap: 10px;
   padding: 10px;
   width: 100%;
-
 }
 
 .contactDetails {
@@ -69,7 +65,7 @@
   gap: 5px;
 }
 
-.paymentDetails{
+.paymentDetails {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -99,12 +95,12 @@
   padding: 10px;
 }
 
-.cardDetails >label >input {
+.cardDetails > label > input {
   height: 30px;
   padding: 15px 10px 15px 10px;
 }
 
-.notice{
+.notice {
   font-size: 13px;
   font-weight: 500;
   color: rgb(112, 101, 101);
@@ -125,4 +121,49 @@
   background: rgb(69, 126, 233);
   color: white;
   font-size: 17px;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+}
+
+.paymentDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  padding: 10px;
+  width: 500px;
+  border-bottom: 1px solid rgb(161, 158, 158);
+}
+
+.paymentSummary {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.row > span > input {
+  width: 120px;
+  text-align: right;
+  padding: 3px;
+}
+
+.grandTotal {
+  font-size: large;
+  margin-top: 5px;
+  padding: 5px 0px;
+  font-weight:600;
 }

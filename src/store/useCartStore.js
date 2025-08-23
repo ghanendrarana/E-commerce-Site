@@ -8,6 +8,9 @@ const useCartStore = create(
       return {
         // initial state
         cart: [],
+        setCheckoutData: null,
+
+        setCheckoutData: (data) => set ({checkoutData: data}),
 
         // functions
         addToCart: (product) =>
