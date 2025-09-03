@@ -18,11 +18,11 @@ export default function CheckOut() {
     address: "",
     apartment: "",
     city: "",
-    postalode: "",
+    postalCode: "",
     cardNumber: "",
     expirationDate: "",
     cvv: "",
-    totalAmount: "",
+    totalAmount: 0,
   });
 
   if (!checkoutData) {
@@ -39,8 +39,32 @@ export default function CheckOut() {
     }
   }, [countries, fetchCountries]);
 
+  useEffect(() => {
+    const subtotal = Number(checkoutData?.totalAmount || 0);
+    const shipping = Number(shippingCharge || 0);
+
+    setFormData((prev) => ({
+      ...prev,
+      totalAmount: subtotal + shipping,
+    }));
+  }, [shippingCharge, checkoutData?.totalAmount]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data Submitted:", formData)
+  }
+
   return (
-    <form className={styles.mainContainer}>
+    <form className={styles.mainContainer} onSubmit={handleSubmit}>
       <div className={styles.header}>Header Part</div>
       <div className={styles.body}>
         <div>
@@ -48,16 +72,19 @@ export default function CheckOut() {
             <h4>Contact</h4>
             <input
               type="text"
+              name="contact"
+              value={formData.contact}
               placeholder="Email or Phone Number"
-              // onChange={(e) => {
-              //   setContact(e.target.value);
-              //   console.log(e.target.value);
-              // }}
+              onChange={handleChange}
             />
           </div>
           <div className={styles.deliveryAddress}>
             <div>Delivery Address</div>
-            <select>
+            <select
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+            >
               <option>Country/Region</option>
               {countries.map((c, index) => (
                 <option key={index} value={c.country}>
@@ -65,14 +92,41 @@ export default function CheckOut() {
                 </option>
               ))}
             </select>
-            <input type="text" placeholder="Full Name" />
-            <input type="text" placeholder="Address" />
             <input
               type="text"
-              placeholder="Apartment, suite, etc. (optional)"
+              name="fullName"
+              value={formData.fullName}
+              placeholder="Full Name"
+              onChange={handleChange}
             />
-            <input type="text" placeholder="City" />
-            <input type="text" placeholder="Postal Code (Optional)" />
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              placeholder="Address"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="apartment"
+              value={formData.apartment}
+              placeholder="Apartment, suite, etc. (optional)"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="city"
+              value={formData.city}
+              placeholder="City"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="postalCode"
+              value={formData.postalCode}
+              placeholder="Postal Code (Optional)"
+              onChange={handleChange}
+            />
             <div className={styles.labelContainer}>
               <input type="checkbox" />
               <label>Save this information for next time</label>
@@ -89,9 +143,27 @@ export default function CheckOut() {
             <div className={styles.cardDetails}>
               <div>Credit Card</div>
               <label>
-                <input type="text" placeholder="Card Number" />
-                <input type="month" placeholder="Expiration Date (MM/YY)" />
-                <input type="password" placeholder="CVV Code" />
+                <input
+                  type="text"
+                  name="cardNumber"
+                  value={formData.cardNumber}
+                  placeholder="Card Number"
+                  onChange={handleChange}
+                />
+                <input
+                  type="month"
+                  name="expirationDate"
+                  value={formData.expirationDate}
+                  placeholder="Expiration Date (MM/YY)"
+                  onChange={handleChange}
+                />
+                <input
+                  type="password"
+                  name="cvv"
+                  value={formData.cvv}
+                  placeholder="CVV Code"
+                  onChange={handleChange}
+                />
               </label>
             </div>
             <button className={styles.payNow}>Pay Now</button>
@@ -129,11 +201,7 @@ export default function CheckOut() {
                 </div>
                 <div className={styles.row}>
                   <span className={styles.grandTotal}>Grand Total:</span>
-                  <span>
-                    USD ${" "}
-                    {(Number(checkoutData?.totalAmount) || 0) +
-                      (Number(shippingCharge) || 0)}
-                  </span>
+                  <span>USD $ {formData.totalAmount.toFixed(2)}</span>
                 </div>
               </div>
             </div>

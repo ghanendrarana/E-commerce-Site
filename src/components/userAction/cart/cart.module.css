@@ -82,9 +82,7 @@
   margin-right: 80px;
 }
 
-
-.buttonContainer > button:hover, 
-.buttonContainer > span:hover {
+.buttonContainer > button:hover {
   cursor: pointer;
   background-color: black;
   color: white;
