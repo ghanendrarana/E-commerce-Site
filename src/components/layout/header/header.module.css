@@ -64,3 +64,24 @@
   padding: 3px;
   gap: 40px;
 }
+
+.cartIconWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cardBadge {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  border-radius: 50%;
+  font-size: small;
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}

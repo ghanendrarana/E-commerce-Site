@@ -57,11 +57,10 @@ export default function CheckOut() {
     }));
   };
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData)
-  }
+    console.log("Form Data Submitted:", formData);
+  };
 
   return (
     <form className={styles.mainContainer} onSubmit={handleSubmit}>
@@ -183,29 +182,44 @@ export default function CheckOut() {
                 <div>{item.quantity}</div>
                 <div>${item.total}</div>
               </div>
-              <div className={styles.paymentSummary}>
-                <div className={styles.row}>
-                  <span>Sub total:</span>
-                  <span>$ {item.total}</span>
-                </div>
-                <div className={styles.row}>
-                  <span>Shipping Charge:</span>
-                  <span>
-                    ${" "}
-                    <input
-                      type="number"
-                      onChange={(e) => setShippingCharge(e.target.value)}
-                      placeholder="Shipping charge"
-                    />
-                  </span>
-                </div>
-                <div className={styles.row}>
-                  <span className={styles.grandTotal}>Grand Total:</span>
-                  <span>USD $ {formData.totalAmount.toFixed(2)}</span>
-                </div>
-              </div>
             </div>
           ))}
+
+          <div className={styles.paymentSummary}>
+            <div className={styles.row}>
+              <span>Sub total:</span>
+              <span>
+                $
+                {checkoutData?.checkoutItems?.reduce(
+                  (acc, item) => acc + item.total,
+                  0
+                )}
+              </span>
+            </div>
+            <div className={styles.row}>
+              <span>Shipping Charge:</span>
+              <span>
+                ${" "}
+                <input
+                  type="number"
+                  onChange={(e) => setShippingCharge(Number(e.target.value))}
+                  placeholder="Shipping charge"
+                />
+              </span>
+            </div>
+            <div className={styles.row}>
+              <span className={styles.grandTotal}>Grand Total:</span>
+              <span>
+                USD $
+                {(
+                  checkoutData?.checkoutItems?.reduce(
+                    (acc, item) => acc + item.total,
+                    0
+                  ) + Number(shippingCharge || 0)
+                ).toFixed(2)}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </form>

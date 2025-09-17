@@ -88,7 +88,10 @@ export default function Cart() {
                 )}
               </div>
             </div>
-            <div className={styles.amountContainer}>
+          </div>
+        ))
+      )}
+         <div className={styles.amountContainer}>
               <div> Sub Total </div>
               <div>${parseFloat(totalAmount).toFixed(2)}</div>
             </div>
@@ -102,9 +105,6 @@ export default function Cart() {
                 Check Out
               </button>
             </div>
-          </div>
-        ))
-      )}
     </div>
   );
 }

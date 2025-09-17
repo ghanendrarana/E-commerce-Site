@@ -14,7 +14,10 @@ import Tiktok from "../../../icons/tiktok";
 import { ShoppingCart } from "lucide-react";
 import { CircleUserRound } from "lucide-react";
 
+import useCartStore from "../../../store/useCartStore";
+
 export default function Header() {
+  const cart = useCartStore((state) => state.cart);
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerTop}>
@@ -67,8 +70,11 @@ export default function Header() {
 
         <div className={styles.userAction}>
           <SearchField />
-          <Link to="/cart">
+          <Link to="/cart" className={styles.cartIconWrapper}>
             <ShoppingCart />
+            {cart.length > 0 && (
+              <span className={styles.cardBadge}>{cart.length}</span>
+            )}
           </Link>
 
           <Link to="/logIn">
