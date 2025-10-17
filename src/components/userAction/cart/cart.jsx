@@ -91,20 +91,18 @@ export default function Cart() {
           </div>
         ))
       )}
-         <div className={styles.amountContainer}>
-              <div> Sub Total </div>
-              <div>${parseFloat(totalAmount).toFixed(2)}</div>
-            </div>
-            <div className={styles.buttonContainer}>
-              <button onClick={clearCart}> Clear All</button>
-              <button onClick={handleContinueShopping}>
-                Continue Shopping
-              </button>
+      <div className={styles.amountContainer}>
+        <div> Sub Total </div>
+        <div>$ {parseFloat(totalAmount).toFixed(2)}</div>
+      </div>
+      <div className={styles.buttonContainer}>
+        <button onClick={clearCart}> Clear All</button>
+        <button onClick={handleContinueShopping}>Continue Shopping</button>
 
-              <button to="/checkout" onClick={handleCheckout}>
-                Check Out
-              </button>
-            </div>
+        <button to="/checkout" onClick={handleCheckout}>
+          Check Out
+        </button>
+      </div>
     </div>
   );
 }

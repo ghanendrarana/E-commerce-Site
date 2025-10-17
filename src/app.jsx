@@ -10,6 +10,8 @@ import Register from "./components/pages/register/register";
 import ShopNow from "./components/userAction/shopNow/shopNow";
 import Cart from "./components/userAction/cart/cart";
 import CheckOut from "./components/pages/checkout/checkout";
+import ChairsPages from "./components/pages/categories/chairs/chairsPages";
+import CategoryLayout from "./components/pages/categories/categoryLayout";
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
         <Route path="cart" element={<Cart />} />
         <Route path="shopNow" element={<ShopNow />} />
         <Route path="checkout" element={<CheckOut />} />
+        <Route path="/category" element={<CategoryLayout />}>
+          <Route path="chairs" element={<ChairsPages />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

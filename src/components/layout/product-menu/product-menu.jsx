@@ -17,6 +17,7 @@ export default function ProductMenu({ setOpenMenu, openMenu }) {
             <li><a href="/products/product2">Product 2</a></li>
             <li><a href="/products/product3">Product 3</a></li>
         </ul>
+        <div>View All Collection</div>
     </div>
   )
 }
