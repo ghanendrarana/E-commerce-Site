@@ -1,15 +1,15 @@
 import opulentBaroqueArmchair from "../../assets/FurniturePicture/opulent-baroque-armchair.jpg";
 import ArmChairFurniture from "../../assets/FurniturePicture/armchair-furniture.png";
 import Chair from "../../assets/FurniturePicture/home-decor-furniture-item-wooden-chair-on-transparent_54043912.png";
-import ModernChairWithWoodenLegs from "../../assets/FurniturePicture/black-modern-chair-with-wooden-legs.png";
-import woodenChair from "../../assets/FurniturePicture/black-wooden-chair.png";
-import classicWoodenChair from "../../assets/FurniturePicture/classic-wooden-chair-with-backrest-designed-for-comfort-and_54719774.png";
+import ChairWithWoodenLegs from "../../assets/FurniturePicture/black-modern-chair-with-wooden-legs.png";
+import WoodenChair from "../../assets/FurniturePicture/black-wooden-chair.png";
+import ClassicWoodenChair from "../../assets/FurniturePicture/classic-wooden-chair-with-backrest-designed-for-comfort-and_54719774.png";
 
 const FurnitureProducts = [
   {
     id: 1,
     name: "Opulent Baroque Armchair",
-    price: 199.99,
+    price: 59.99,
     category: "Armchair",
     description: `This is a luxurious vintage armchair with a high tufted backrest and
     rolled armrests, upholstered in soft beige fabric. It features
@@ -22,7 +22,7 @@ const FurnitureProducts = [
   },
   {
     id: 2,
-    name: "Armchair",
+    name: "Arm Chair",
     price: 19.99,
     category: "Armchair",
     description: `This is a luxurious vintage armchair with a high tufted backrest and
@@ -47,38 +47,38 @@ const FurnitureProducts = [
 
    {
     id: 4,
-    name: "ModernChairWithWoddenLegs",
+    name: "Modern Chair",
     price: 20,
     category: "Chair",
     description: `This is a comfortable modern chair with long wooden legs.`,
     sizes: ["Small", "Medium", "Large"],
     colors: ["Gray", "Beige", "Red"],
     rating: 4.5,
-    image: ModernChairWithWoodenLegs,
+    image: ChairWithWoodenLegs,
   },
 
    {
     id: 5,
-    name: "woodenChair",
+    name: "Wooden Chair",
     price: 25,
     category: "Chair",
     description: `This is a comfortable office like wooden chair.`,
     sizes: ["Small", "Medium", "Large"],
     colors: ["Gray", "Beige", "Red"],
     rating: 4.5,
-    image: woodenChair,
+    image: WoodenChair,
   },
 
    {
     id: 6,
-    name: "classicWoodenChair",
-    price: 199.99,
+    name: "Classic Wooden Chair",
+    price: 19.99,
     category: "Chair",
     description: `This is a classic woodern chair with backrest design for comfort.`,
     sizes: ["Small", "Medium", "Large"],
     colors: ["Gray", "Beige", "Red"],
     rating: 4.5,
-    image: classicWoodenChair,
+    image: ClassicWoodenChair,
   },
 ];
 

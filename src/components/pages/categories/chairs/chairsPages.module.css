@@ -1,5 +1,5 @@
 .header {
-    height: 80px;
+    height: 120px;
     display: flex;
     align-items: center;
     padding-left: 260px;
@@ -14,12 +14,73 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 200px;
+    gap: 150px;
     margin-left: 150px;
     margin-top: 20px;
+}
+
+.productsGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.productCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+    height: 350px;
+    width: 200px;
+    /* border: 1px solid black; */
+}
+
+.imageContainer {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
 }
 
 .image {
     height: 200px;
     width: 200px;
+}
+
+.detailContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 5px;
+}
+
+.name {
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+}
+
+.price {
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+}
+
+.addtoCartButton {
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.addtoCartButton:hover {
+    background-color: black;
+    color: white;
 }
